@@ -76,8 +76,6 @@ THEN I can save my initials and my score
     //prompt("Type your initials into the box to save your score")
     //attach API to give a place for initials to be stored
 
-wireframe screenshot: ![4-code-quiz-wireframe (1)](https://user-images.githubusercontent.com/86372011/135670775-5232a1d8-5a66-41fb-a5b0-d20eb1cebe44.png)
-
 
 
 URL:  https://kbonaccorsi.github.io/4-code-quiz/
