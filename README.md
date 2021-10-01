@@ -80,7 +80,6 @@ After putting initals into box, link to a new screen
 new screen needs to have list of highscores, an okay button, and a clear highscores button
 
 
-
 URL:  https://kbonaccorsi.github.io/4-code-quiz/
 
 Screenshot: 
