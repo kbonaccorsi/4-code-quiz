@@ -15,10 +15,6 @@ THEN a timer starts and I am presented with a question
         //button data-status: visible
         //addEventGenerator ("click", start button)
         //button data-status: hidden
-    //make a timer that appears once start button has been pressed
-        // timer data-status: hidden
-        //when - addEventGenerator ("click", start button)
-        //timer data-status: visible
     //timer counts down at 1 second intervals
         //when - addEventGenerator ("click", start button)
         //timer countdown begins
@@ -31,7 +27,7 @@ THEN a timer starts and I am presented with a question
                 display ("Time is up")
                 }
         //timer display updates every second
-    //first question appears simultaneously as timer
+    //first question appears as soon as start button is clicked
         // question data-status: hidden
         //when - addEventGenerator ("click", start button)
         //question data-status: visible
@@ -44,6 +40,7 @@ THEN a timer starts and I am presented with a question
                     button C - answer choice
                     button D - answer choice
         //add a next button for user to press and proceed to the next question
+            //event.preventDefault();
 
 WHEN I answer a question
 THEN I am presented with another question
@@ -65,6 +62,7 @@ THEN time is subtracted from the clock
         return(let incorrect + "correct answer and reason why");
         timerCountDown -2
     }
+    //Add time when users get questions correct
 
 WHEN all questions are answered or the timer reaches 0
 THEN the game is over
@@ -75,7 +73,11 @@ WHEN the game is over
 THEN I can save my initials and my score
     //prompt("Type your initials into the box to save your score")
     //attach API to give a place for initials to be stored
+        //localStorage.setItem
+        //highscore object holding array with name:score
 
+After putting initals into box, link to a new screen
+new screen needs to have list of highscores, an okay button, and a clear highscores button
 
 
 
