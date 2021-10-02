@@ -1,34 +1,27 @@
+
 // global variables
-var intro = document.querySelector(".introduction");
-var questionEl = document.querySelector(".questions");
-var choiceEl = document.querySelector(".choices");
-var answerEl = document.querySelector(".answer");
-var timeEl = document.querySelector(".time");
-var secondsLeft=120;
+const startButton = document.getElementById("start-btn")
+const questioncontainerElement= document.getElementById("question-container")
+constshuffledQuestions, currentQuestionsIndex
 
-// functions
 
-//function controls the timer
-function countdownTimer() {
-    var timeInterval = setInterval(() => {
-        if (secondsLeft > 1) {
-            timeEl.textContent = secondsLeft + " seconds remaining";
-            //decrease timer by 1
-            timeLeft--;
-        } else if (secondsLeft === 1) {
-            timeEl.textContent = secondsLeft + " second remaining";
-            secondsLeft--;
-        } else {
-            timeEl.textContent = "";
-            clearInterval(timeInterval);
-            displayMessage();
-        }
-    }, 12000);
+startButton.addEventListener("click", startGame)
+
+function startGame() {
+    console.log("Started")
+    startButton.classList.add("hide") 
+    questioncontainerElement.classList.remove("hide")
+    setNextQuestion()
 }
 
-//controls the question, choices, and answer.
-var index = 0;
-//create an array of questions/choices/answers array
+function setNextQuestion() {
+
+}
+
+function selectAnswer() {
+
+}
+
 var questions = [
     { 
     question: "1",
@@ -72,18 +65,63 @@ var questions = [
     answerChoices: ["a","b","c","d"],
     correctAnswer: "a",
     },
-]
-index++;
-//index =1
-questionEl.textContent= questions[index].question;
-choiceEl.textContent= questions[index].answerChoices;
-answerEl.textContent= questions[index].correctAnswer;
 
 
-//for loop for answerChoices
-//create a button for each item
-//.textContent to display value to each button
 
 
-// process
 
+
+
+
+
+
+
+
+
+// 
+// var intro = document.querySelector(".introduction");
+// var questionEl = document.querySelector(".questions");
+// var choiceEl = document.querySelector(".choices");
+// var answerEl = document.querySelector(".answer");
+// var timeEl = document.querySelector(".time");
+// var secondsLeft=120;
+
+// // functions
+
+// //function countdownTimer controls the timer
+// function countdownTimer() {
+//     var timeInterval = setInterval(() => {
+//         if (secondsLeft > 1) {
+//             timeEl.textContent = secondsLeft + " seconds remaining";
+//             //decrease timer by 1
+//             timeLeft--;
+//         } else if (secondsLeft === 1) {
+//             timeEl.textContent = secondsLeft + " second remaining";
+//             secondsLeft--;
+//         } else {
+//             timeEl.textContent = "";
+//             clearInterval(timeInterval);
+//         }
+//     }, 12000);
+// }
+
+// //controls the question, choices, and answer.
+// var index = 0;
+// //create an array of questions/choices/answers array
+// 
+// ]
+// index++;
+// //index =1
+// questionEl.textContent= questions[index].question;
+// choiceEl.textContent= questions[index].answerChoices;
+// answerEl.textContent= questions[index].correctAnswer;
+
+
+// //for loop for answerChoices
+// //create a button for each item
+// //.textContent to display value to each button
+
+
+// // process
+
+// countdownTimer();

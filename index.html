@@ -9,48 +9,47 @@
 </head>
 
 <body>
-    <div class = "introduction">
-        
-        <h1>Code Quiz</h1>
-        <p> When you press begin, you will have 2 minutes to answer a series of questions.  When time is up, or you have answered all of the questions, your score will be the remaining time.
-            For each correct answer, you will add 5 seconds to your score.  For each wrong answer, you will lose 5 seconds from your score.
-            How high can you get your score?
-        </p>
-
-        <button class="begin">
-            Begin
-        </button>
-    </div>
+    <h1>Code Quiz</h1>
     
-    <div class = "questions">
-        
-        
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question-container" class="hide">
+                <div id="question">Question</div>
+                <div id="answerChoices" class="btn-grid">
+                    <button class="btn">A</button>
+                    <button class="btn">B</button>
+                    <button class="btn">C</button>
+                    <button class="btn">D</button>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+
+        <!--<div class ="introduction">
+            <p> When you press begin, you will have 2 minutes to answer a series of questions.  When time is up, or you have answered all of the questions, your score will be the remaining time.
+                For each correct answer, you will add 2 seconds to your score.  For each wrong answer, you will lose 2 seconds from your score.
+                How high can you get your score?
+            </p>
+
+        <div class ="answer">
+            
+            
+        </div>
     </div>
-    
-    <div class = "questions">
-        
-        
-    </div>
-    
-    <div class = "questions">
-        
-        
-    </div>
-    
-    <div class = "timer">
 
 
-    </div>
+        <div class ="highscore">
 
 
-    <button class= "next">
-        Next ▶
-    </button>
+        </div>
 
-    <div class = "highscore">
+        <div class ="time"></div> -->
 
 
-    </div>
+        </div>
 
     <script src=./script.js></script>
 </body>
