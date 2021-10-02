@@ -52,14 +52,15 @@ THEN I am presented with another question
     //if (answerChoiceButton = true) {
         return(let correct)
     } else {
-        return(let incorrect + "correct answer and reason why")
+        return(let incorrect)
     }
 WHEN I answer a question incorrectly
 THEN time is subtracted from the clock
     //if (answerChoiceButton = true) {
         return(let correct)
+        timerCountDown +2
     } else {
-        return(let incorrect + "correct answer and reason why");
+        return(let incorrect);
         timerCountDown -2
     }
     //Add time when users get questions correct
