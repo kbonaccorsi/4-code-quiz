@@ -5,34 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href= ./assets/css/style.css>
-    <title>Code Quiz</title>
+    <title>Quiz App</title>
 </head>
-
 <body>
-    <h1>Code Quiz</h1>
-    
+    <header></header>
+        <h1>Code Quiz</h1>
+        <div id="timer"></div>
+    </header>
     <div class="container">
+        <div id="introduction-container" class="hide">
+            <div id="introduction">Introduction</div>
+            <p> When you press begin, you will have 120 seconds to answer a series of questions.  When time is up, or you have answered all of the questions, your score will be the remaining time.
+                For each correct answer, you will add 2 seconds to your score.  For each wrong answer, you will lose 2 seconds from your score.
+                How high can you get your score?
+            </p>
+        </div>
         <div id="question-container" class="hide">
-            <div id="question-container" class="hide">
-                <div id="question">Question</div>
-                <div id="answerChoices" class="btn-grid">
-                    <button class="btn">A</button>
-                    <button class="btn">B</button>
-                    <button class="btn">C</button>
-                    <button class="btn">D</button>
-                </div>
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">A</button>
+                <button class="btn">B</button>
+                <button class="btn">C</button>
+                <button class="btn">D</button>
             </div>
+        </div>
+        <div id ="highscore-container" class="hide">
+            <div id="highscore-board">Highscore</div>
+                <!-- space for user to input their initials -->
         </div>
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
+    </div>
 
-        <!--<div class ="introduction">
-            <p> When you press begin, you will have 2 minutes to answer a series of questions.  When time is up, or you have answered all of the questions, your score will be the remaining time.
-                For each correct answer, you will add 2 seconds to your score.  For each wrong answer, you will lose 2 seconds from your score.
-                How high can you get your score?
-            </p>
+        <!--
+            
 
         <div class ="answer">
             
@@ -48,8 +56,6 @@
 
         <div class ="time"></div> -->
 
-
-        </div>
 
     <script src=./script.js></script>
 </body>

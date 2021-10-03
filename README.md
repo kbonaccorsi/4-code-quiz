@@ -84,3 +84,64 @@ new screen needs to have list of highscores, an okay button, and a clear highsco
 URL:  https://kbonaccorsi.github.io/4-code-quiz/
 
 Screenshot: 
+
+
+
+<!--  
+// var intro = document.querySelector(".introduction");
+// var timeEl = document.querySelector(".time");
+// var secondsLeft=120;
+
+// // functions
+
+// //function countdownTimer controls the timer
+// function countdownTimer() {
+//     var timeInterval = setInterval(() => {
+//         if (secondsLeft > 1) {
+//             timeEl.textContent = secondsLeft + " seconds remaining";
+//             //decrease timer by 1
+//             timeLeft--;
+//         } else if (secondsLeft === 1) {
+//             timeEl.textContent = secondsLeft + " second remaining";
+//             secondsLeft--;
+//         } else {
+//             timeEl.textContent = "";
+//             clearInterval(timeInterval);
+//         }
+//     }, 12000);
+// }
+
+// //controls the question, choices, and answer.
+// var index = 0;
+// //create an array of questions/choices/answers array
+// 
+// ]
+// index++;
+// //index =1
+// questionEl.textContent= questions[index].question;
+// choiceEl.textContent= questions[index].answerChoices;
+// answerEl.textContent= questions[index].correctAnswer;
+
+
+// //for loop for answerChoices
+// //create a button for each item
+// //.textContent to display value to each button
+
+
+// // process
+
+// countdownTimer(); -->
+
+
+<!-- const instructionContainerElement = document.getElementById("instruction-container")
+const instructionsElement = document.getElementById("Instructions")
+const highscoreContainerElement = document.getElementById("highscore-board-container")
+const highscoreElement = document.getElementById("highscore-board")
+
+function showInstruction () {
+    instructionContainerElement.classList.remove("hide")
+    instructionsElement.textContent
+}
+
+instructionContainerElement.classList.add("hide")
+ -->
