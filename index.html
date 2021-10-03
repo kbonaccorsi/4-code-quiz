@@ -10,7 +10,7 @@
 <body>
     <header></header>
         <h1>Code Quiz</h1>
-        <div id="timer"></div>
+        <div id="timer">120 seconds remaining</div>
     </header>
     <div class="container">
         <div id="introduction-container" class="hide">
@@ -30,32 +30,18 @@
             </div>
         </div>
         <div id ="highscore-container" class="hide">
-            <div id="highscore-board">Highscore</div>
-                <!-- space for user to input their initials -->
+            <form id="initials-form" method="POST">
+                <label for="initials-text">Type your initials to add them to the scoreboard</label>
+                <input type="text" name="initials" id="initials-text"/>
+            </form>
+            <ul id="initials-list">Scoreboard</ul>
         </div>
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="submit-btn" class="submit-btn btn hide">Submit</button>
         </div>
     </div>
-
-        <!--
-            
-
-        <div class ="answer">
-            
-            
-        </div>
-    </div>
-
-
-        <div class ="highscore">
-
-
-        </div>
-
-        <div class ="time"></div> -->
-
 
     <script src=./script.js></script>
 </body>

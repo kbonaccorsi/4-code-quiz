@@ -1,5 +1,6 @@
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
+const submitButton = document.getElementById("submit-btn")
 const introductionContainerEl = document.getElementById("introduction-container");
 const introductionEl = document.getElementById("introduction");
 const questionContainerEl = document.getElementById("question-container");
@@ -7,7 +8,60 @@ const questionEl = document.getElementById("question");
 const answerButtonEl = document.getElementById("answer-buttons");
 const timerEl = document.getElementById("timer");
 const highscoreContainerEl = document.getElementById("highscore-container");
+const initialsFormEl = document.getElementById("initials-form");
+const initialsTextEl = document.getElementById("initials-text");
+const initialsListEl = document.getElementById("initials-list");
+
+const questions = [
+    {
+        question: "What does HTML stand for?",
+        answers: [
+            { text: "HyperText Markup Language", correct: true},
+            { text: "HyperText Multiple Language", correct: false},
+            { text: "HyperTyping Multiple Lines", correct: false},
+            { text: "HyperTyping Markup Lines", correct: false}
+        ]
+    },
+    {
+        question: "What does CSS stand for?",
+        answers: [
+            { text: "Case Sensitive Styling", correct: false},
+            { text: "Current Styling Sheet", correct: false},
+            { text: "Cascading Style Sheet", correct: true},
+            { text: "Cascading Sensitive Styling", correct: false}
+        ]
+    },
+    {
+        question: "What does HTML do?",
+        answers: [
+            { text: "Makes the page interactive", correct: false},
+            { text: "Puts the text onto the page", correct: true},
+            { text: "Decorates the page", correct: false},
+            { text: "Saves the page to storage", correct: false}
+        ]
+    },
+    {
+        question: "What does local storage do?",
+        answers: [
+            { text: "saves key-value pairs in the web browser only until the page is refreshed", correct: false},
+            { text: "saves console.log", correct: false},
+            { text: "saves files to the hardrive", correct: false},
+            { text: "Saves key-value pairs in the web browser even after the page has been refreshed", correct: true}
+        ]
+    },
+    {
+        question: "What does a loop do?",
+        answers: [
+            { text: "runs a block of code until a certain condition is met", correct: true},
+            { text: "a single task within a defined block", correct: false},
+            { text: "calls functions", correct: false},
+            { text: "collects properties", correct: false}
+        ]
+    },
+];
+
 let secondsLeft = 120;
+
 let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startGame);
@@ -15,11 +69,12 @@ nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     setNextQuestion();
 });
-instructions ()
 
 function instructions () {
     introductionContainerEl.classList.remove("hide");
 };
+
+instructions ()
 
 function setTimer () {
     let timerInterval = setInterval(function() {
@@ -29,7 +84,7 @@ function setTimer () {
             timerEl.textContent = secondsLeft + " second remaining";
         }else if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            highscoreContainerEl.classList.remove("hide");
+            questionContainerEl.classList.add("hide");
         }
     }, 1000);
 };
@@ -81,11 +136,12 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hide");
     } else {
-        startButton.innerText = "Restart";
-        startButton.classList.remove("hide");
+        questionContainerEl.classList.add("hide");
+        nextButton.classList.add("hide");
+        highscoreContainerEl.classList.remove("hide");
     }
-    nextButton.classList.remove("hide");
 }
+
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
@@ -101,50 +157,8 @@ function clearStatusClass(element) {
     element.classList.remove("incorrect");
 };
 
-const questions = [
-    {
-        question: "What does HTML stand for?",
-        answers: [
-            { text: "HyperText Markup Language", correct: true},
-            { text: "HyperText Multiple Language", correct: false},
-            { text: "HyperTyping Multiple Lines", correct: false},
-            { text: "HyperTyping Markup Lines", correct: false}
-        ]
-    },
-    {
-        question: "What does CSS stand for?",
-        answers: [
-            { text: "Case Sensitive Styling", correct: false},
-            { text: "Current Styling Sheet", correct: false},
-            { text: "Cascading Style Sheet", correct: true},
-            { text: "Cascading Sensitive Styling", correct: false}
-        ]
-    },
-    {
-        question: "What does HTML do?",
-        answers: [
-            { text: "Makes the page interactive", correct: false},
-            { text: "Puts the text onto the page", correct: true},
-            { text: "Decorates the page", correct: false},
-            { text: "Saves the page to storage", correct: false}
-        ]
-    },
-    {
-        question: "What does local storage do?",
-        answers: [
-            { text: "saves key-value pairs in the web browser only until the page is refreshed", correct: false},
-            { text: "saves console.log", correct: false},
-            { text: "saves files to the hardrive", correct: false},
-            { text: "Saves key-value pairs in the web browser even after the page has been refreshed", correct: true}
-        ]
-    },
-    {
-        question: "What does a loop do?",
-        answers: [
-            { text: "runs a block of code until a certain condition is met", correct: true},
-            { text: "a single task within a defined block", correct: false},
-            { text: "calls functions", correct: false},
-            { text: "collects properties", correct: false}
-        ]
-    },
-];
+
+// const highscoreContainerEl = document.getElementById("highscore-container");
+// const initialsFormEl = document.getElementById("initials-form");
+// const initialsTextEl = document.getElementById("initials-text");
+// const initialsListEl = document.getElementById("initials-list");

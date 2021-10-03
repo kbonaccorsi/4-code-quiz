@@ -37,13 +37,17 @@ p {
 #timer {
     position: fixed;
     margin: 20vh -70vw 0vh 0vw;
-    font-size: 50px;
+    font-size: 25px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 15px 5px 25px 5px;
 }
 
 .container {
     width: 800px;
     max-width: 80%;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 15px 20px 25px 5px;
