@@ -1,6 +1,7 @@
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
-const submitButton = document.getElementById("submit-btn")
+const submitButton = document.getElementById("submit-btn");
+const submitQuizButton = document.getElementById("submit-quiz-btn");
 const introductionContainerEl = document.getElementById("introduction-container");
 const introductionEl = document.getElementById("introduction");
 const questionContainerEl = document.getElementById("question-container");
@@ -11,6 +12,7 @@ const highscoreContainerEl = document.getElementById("highscore-container");
 const initialsFormEl = document.getElementById("initials-form");
 const initialsTextEl = document.getElementById("initials-text");
 const initialsListEl = document.getElementById("initials-list");
+const resultsContainerEl = document.getElementById("results");
 
 const questions = [
     {
@@ -76,8 +78,10 @@ function instructions () {
 
 instructions ()
 
+let timerInterval;
+
 function setTimer () {
-    let timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds remaining";
         if(secondsLeft === 1) {
@@ -136,17 +140,20 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hide");
     } else {
+        clearInterval(timerInterval);
         questionContainerEl.classList.add("hide");
         nextButton.classList.add("hide");
         highscoreContainerEl.classList.remove("hide");
     }
 }
-
+let points = 0;
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
+        let plus= 2;
+        points = timerInterval +2;
     } else {
         element.classList.add("incorrect");
     };
@@ -156,6 +163,10 @@ function clearStatusClass(element) {
     element.classList.remove("correct");
     element.classList.remove("incorrect");
 };
+
+function showResults() {
+    
+}
 
 var scores = [];
 
