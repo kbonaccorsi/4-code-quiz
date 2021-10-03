@@ -166,13 +166,9 @@ function renderScores() {
         var score = scores[i];
 
         var li = document.createElement("li");
-        li.textContent = score;
+        li.textContent = (score + "initials");
         li.setAttribute("data-index", i);
 
-        var button = document.createElement("button");
-        button.textContent = "Complete";
-
-        li.appendChild(button);
         initialsListEl.appendChild(li);
     }
 }
@@ -191,9 +187,8 @@ function storeScores() {
     localStorage.setItem("scores", JSON.stringify(scores));
 }
 
-initialsFormEl.addEventListener("submit", function(event) {
-    event.preventDefault();
-
+submitButton.addEventListener("click", function() {
+    
     const scoreText = initialsTextEl.value.trim();
 
     if (scoreText === "") {
@@ -207,20 +202,4 @@ initialsFormEl.addEventListener("submit", function(event) {
     renderScores();
 });
 
-initialsListEl.addEventListener("click", function (event) {
-    var element = event.target;
-
-    if (element.matches("button") === true) {
-        var index = element.parentElement.getAttribute("data-index");
-        scores.splice(index, 1);
-
-        storeScores();
-        renderScores();
-    }
-});
-
 init()
-// const highscoreContainerEl = document.getElementById("highscore-container");
-// const initialsFormEl = document.getElementById("initials-form");
-// const initialsTextEl = document.getElementById("initials-text");
-// const initialsListEl = document.getElementById("initials-list");

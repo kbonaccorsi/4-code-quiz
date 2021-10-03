@@ -34,6 +34,11 @@ p {
     font: 30px black;
 }
 
+ul {
+    list-style-type: none;
+    font: 18px black;
+}
+
 #timer {
     position: fixed;
     margin: 20vh -70vw 0vh 0vw;
