@@ -24,14 +24,14 @@ THEN a timer starts and I am presented with a question
                 }else if (timerCountDown = 1) {
                 display ("You have " + timerCountDown + " second remaining")
                 }else {
-                display ("Time is up")
+                display (scoreboard)
                 }
         //timer display updates every second
     //first question appears as soon as start button is clicked
         // question data-status: hidden
         //when - addEventGenerator ("click", start button)
         //question data-status: visible
-    //question container includes a header for the question, and 4 answer choices with buttons.
+    //question container includes the question, and 4 answer choices with buttons.
         // div questionContainer
             // header says question # and question
                 //div answers

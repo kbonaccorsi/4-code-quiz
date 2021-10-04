@@ -3,26 +3,19 @@
     font-family: serif;
 }
 
-:root {
-    --hue-base: 2000;
-    --hue-correct: 145;
-    --hue-incorrect: 0;
-}
-
 body {
-    --hue: var(--hue-base);
     padding: 0;
     margin:0;
     display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: teal;
 }
 body.correct {
-    --hue: var(--hue-correct);
+    background-color: green;
 }body.incorrect {
-    --hue: var(--hue-incorrect);
+    background-color: red;
 }
 
 
@@ -78,9 +71,8 @@ ul {
 }
 
 .btn {
-    --hue: var(--hue-base);
     border: 2px solid black;
-    background-color: hsl(var(--hue), 100%, 50%);
+    background-color: teal;
     border-radius: 100px;
     padding: 10px 10px;
     outline: none;
@@ -93,12 +85,10 @@ ul {
 }
 
 .btn.correct {
-    --hue: var(--hue-correct);
     color: black;
 }
 
 .btn.incorrect {
-    --hue: var(--hue-incorrect);
     color: black;
 }
 

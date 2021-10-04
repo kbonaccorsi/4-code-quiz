@@ -1,7 +1,9 @@
+
+
+//global variables
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
-const submitButton = document.getElementById("submit-btn");
-const submitQuizButton = document.getElementById("submit-quiz-btn");
+const submitButton = document.getElementById("submit-btn")
 const introductionContainerEl = document.getElementById("introduction-container");
 const introductionEl = document.getElementById("introduction");
 const questionContainerEl = document.getElementById("question-container");
@@ -12,43 +14,42 @@ const highscoreContainerEl = document.getElementById("highscore-container");
 const initialsFormEl = document.getElementById("initials-form");
 const initialsTextEl = document.getElementById("initials-text");
 const initialsListEl = document.getElementById("initials-list");
-const resultsContainerEl = document.getElementById("results");
 
 const questions = [
     {
-        question: "What does HTML stand for?",
+        question: "What does a single line comment begin with?",
         answers: [
-            { text: "HyperText Markup Language", correct: true},
-            { text: "HyperText Multiple Language", correct: false},
-            { text: "HyperTyping Multiple Lines", correct: false},
-            { text: "HyperTyping Markup Lines", correct: false}
+            { text: "//", correct: true},
+            { text: "/*", correct: false},
+            { text: "<--", correct: false},
+            { text: "<!>", correct: false}
         ]
     },
     {
-        question: "What does CSS stand for?",
+        question: "What keyword can be used for a variable?",
         answers: [
-            { text: "Case Sensitive Styling", correct: false},
-            { text: "Current Styling Sheet", correct: false},
-            { text: "Cascading Style Sheet", correct: true},
-            { text: "Cascading Sensitive Styling", correct: false}
+            { text: "const", correct: false},
+            { text: "element", correct: false},
+            { text: "let", correct: true},
+            { text: "function", correct: false}
         ]
     },
     {
-        question: "What does HTML do?",
+        question: "Which is a data type?",
         answers: [
-            { text: "Makes the page interactive", correct: false},
-            { text: "Puts the text onto the page", correct: true},
-            { text: "Decorates the page", correct: false},
-            { text: "Saves the page to storage", correct: false}
+            { text: "function", correct: false},
+            { text: "boolean", correct: true},
+            { text: "variable", correct: false},
+            { text: "message", correct: false}
         ]
     },
     {
-        question: "What does local storage do?",
+        question: "What is it called when you put 2 or more strings together?",
         answers: [
-            { text: "saves key-value pairs in the web browser only until the page is refreshed", correct: false},
-            { text: "saves console.log", correct: false},
-            { text: "saves files to the hardrive", correct: false},
-            { text: "Saves key-value pairs in the web browser even after the page has been refreshed", correct: true}
+            { text: "data type", correct: false},
+            { text: "boolean", correct: false},
+            { text: "function", correct: false},
+            { text: "concatination", correct: true}
         ]
     },
     {
@@ -61,8 +62,6 @@ const questions = [
         ]
     },
 ];
-
-let secondsLeft = 120;
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -79,6 +78,7 @@ function instructions () {
 instructions ()
 
 let timerInterval;
+let secondsLeft = 120;
 
 function setTimer () {
     timerInterval = setInterval(function() {
@@ -146,16 +146,20 @@ function selectAnswer(e) {
         highscoreContainerEl.classList.remove("hide");
     }
 }
-let points = 0;
+
+//adjust list to only have ten scores
+//adjust list to order by score, and add scores after list is full
+//adjust scores to seconds left +2
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        let plus= 2;
-        points = timerInterval +2;
+        //points = 2;
+        //secondsLeft = secondsLeft + points;
     } else {
         element.classList.add("incorrect");
+        //secondsLeft = secondsLeft + points;
     };
 };
 
@@ -163,10 +167,6 @@ function clearStatusClass(element) {
     element.classList.remove("correct");
     element.classList.remove("incorrect");
 };
-
-function showResults() {
-    
-}
 
 var scores = [];
 
@@ -177,7 +177,7 @@ function renderScores() {
         var score = scores[i];
 
         var li = document.createElement("li");
-        li.textContent = (score + "initials");
+        li.textContent = (score);
         li.setAttribute("data-index", i);
 
         initialsListEl.appendChild(li);
@@ -200,7 +200,7 @@ function storeScores() {
 
 submitButton.addEventListener("click", function() {
     
-    const scoreText = initialsTextEl.value.trim();
+    const scoreText = (initialsTextEl.value.trim() + ": " + secondsLeft);
 
     if (scoreText === "") {
         return;
