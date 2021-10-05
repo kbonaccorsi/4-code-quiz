@@ -10,12 +10,12 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    background-color: teal;
+    background-color: rgb(8, 72, 83);
 }
 body.correct {
-    background-color: green;
+    background-color: rgb(20, 97, 20);
 }body.incorrect {
-    background-color: red;
+    background-color: rgb(131, 18, 18);
 }
 
 
@@ -29,6 +29,10 @@ p {
 
 ul {
     list-style-type: none;
+    font: 18px black;
+}
+
+label {
     font: 18px black;
 }
 
@@ -63,6 +67,10 @@ ul {
     font: 40px bolder black;
 }
 
+#initials-list {
+    font:18px black;
+}
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -72,7 +80,7 @@ ul {
 
 .btn {
     border: 2px solid black;
-    background-color: teal;
+    background-color: rgb(95, 192, 192);
     border-radius: 100px;
     padding: 10px 10px;
     outline: none;
@@ -80,17 +88,6 @@ ul {
     color: white;
 }
 
-.btn:hover {
-    border-color: black;
-}
-
-.btn.correct {
-    color: black;
-}
-
-.btn.incorrect {
-    color: black;
-}
 
 .start-btn, .next-btn {
     font-size: 20px;

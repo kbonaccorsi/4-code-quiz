@@ -1,5 +1,4 @@
 
-
 //global variables
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
@@ -79,13 +78,14 @@ instructions ()
 
 let timerInterval;
 let secondsLeft = 120;
+//let secondsRemaining= secondsLeft + points;
 
 function setTimer () {
     timerInterval = setInterval(function() {
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds remaining";
         if(secondsLeft === 1) {
-            timerEl.textContent = secondsLeft + " second remaining";
+            timerEl.textContent = secondsLeft + " seconds remaining";
         }else if (secondsLeft === 0) {
             clearInterval(timerInterval);
             questionContainerEl.classList.add("hide");
@@ -144,22 +144,22 @@ function selectAnswer(e) {
         questionContainerEl.classList.add("hide");
         nextButton.classList.add("hide");
         highscoreContainerEl.classList.remove("hide");
+        initialsFormEl.classList.remove("hide");
+        initialsListEl.classList.add("hide");
     }
 }
 
-//adjust list to only have ten scores
-//adjust list to order by score, and add scores after list is full
-//adjust scores to seconds left +2
+//enter refreshes the page  addEventListener.function(event) event.preventDefault;
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        //points = 2;
-        //secondsLeft = secondsLeft + points;
+        //add 2 seconds to seconds left
+        ;
     } else {
         element.classList.add("incorrect");
-        //secondsLeft = secondsLeft + points;
+        //subtract 2 seconds from seconds left
     };
 };
 
@@ -199,7 +199,9 @@ function storeScores() {
 }
 
 submitButton.addEventListener("click", function() {
-    
+    initialsFormEl.classList.add("hide");
+    submitButton.classList.add("hide");
+    initialsListEl.classList.remove("hide");
     const scoreText = (initialsTextEl.value.trim() + ": " + secondsLeft);
 
     if (scoreText === "") {
