@@ -83,4 +83,5 @@ new screen needs to have list of highscores, an okay button, and a clear highsco
 
 URL:  https://kbonaccorsi.github.io/4-code-quiz/
 
-Screenshot: 
+Screenshot: ![Quiz App](https://user-images.githubusercontent.com/86372011/136044559-1e781f4f-f2a6-41e1-ad6e-e61c54a8e61b.gif)
+
